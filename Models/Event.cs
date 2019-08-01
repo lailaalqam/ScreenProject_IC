@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ScreenProject.Models
 {
-    public class Event
+    public class Event:IBaseModle
     {
         public int Id { get; set; }
         public int TemplateId { get; set; }
@@ -14,7 +14,7 @@ namespace ScreenProject.Models
         public String Repeat { get; set; }
         public int Priority { get; set; }
         public ICollection<EventField> EventFields { get; set; }
-        public Template Templates { get; set; }
+        public Template MyTemplate { get; set; }
 
 
 

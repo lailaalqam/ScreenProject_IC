@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace ScreenProject.Models
 {
-    public class TemplateField
+    public class TemplateField : IBaseModle
     {
         public int Id { get; set; }
-        public int TemplateId { get; set; }
+        public int? TemplateId { get; set; }
         public String TopPosition { get; set; }
         public String LeftPosition { get; set; }
 

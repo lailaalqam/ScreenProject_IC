@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScreenProject.Interface;
+using ScreenProject.Repository;
 
 namespace ScreenProject
 {
@@ -33,6 +35,14 @@ namespace ScreenProject
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+           
+            services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+            services.AddScoped<ITemplateRepo, TemplateRepo>();
+            services.AddScoped<IEventRepo, EventRepo>();
+            services.AddScoped<IEventFieldRepo, EventFieldRepo>();
+            services.AddScoped<ITemplateFieldRepo, TemplateFieldRepo>();
+
 
 
 

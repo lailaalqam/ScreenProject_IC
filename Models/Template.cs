@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ScreenProject.Models
 {
-    public class Template
+    public class Template : IBaseModle
     {
 
         public int Id { get; set; }
