@@ -10,10 +10,10 @@ namespace ScreenProject.Repository
     public class EventFieldRepo : BaseRepo<EventField>, IEventFieldRepo
     {
 
-        public MyAppContext _mYHelperContext;
+        public MyAppContext _appContext;
         public EventFieldRepo(MyAppContext context) : base(context)
         {
-            _mYHelperContext = context;
+            _appContext = context;
 
         }
 

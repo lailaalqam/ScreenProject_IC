@@ -10,10 +10,10 @@ namespace ScreenProject.Repository
     public class EmployeeRepo : BaseRepo<Employee>, IEmployeeRepo
     {
 
-        public MyAppContext _mYHelperContext;
+        public MyAppContext _appContext;
         public EmployeeRepo(MyAppContext context) : base(context)
         {
-            _mYHelperContext = context;
+            _appContext = context;
 
         }
 

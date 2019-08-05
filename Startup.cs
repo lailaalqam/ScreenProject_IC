@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScreenProject.Interface;
 using ScreenProject.Repository;
+using System;
 
 namespace ScreenProject
 {
@@ -28,7 +30,9 @@ namespace ScreenProject
                    {
                        options.SerializerSettings.ReferenceLoopHandling =
                            Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                   });            services.AddDbContext<ScreenProject.MyAppContext>(builder =>            {                builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));            }); ;
+                   });
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddDbContext<ScreenProject.MyAppContext>(builder =>            {                builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));            }); ;
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

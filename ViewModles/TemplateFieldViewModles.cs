@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ScreenProject.Models
+namespace ScreenProject.ViewModles
 {
-    public class TemplateField : IBaseModle
+    public class TemplateFieldViewModles
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         public int Id { get; set; }
         public int? TemplateId { get; set; }
@@ -21,15 +19,8 @@ namespace ScreenProject.Models
 
         public String FontColor { get; set; }
         public String Name { get; set; }
-        public Template MyTemplate { get; set; }
-        public ICollection<EventField> EventFields { get; set; }
-
-
-       
-
-
-
-
+       // public TemplateViewModles MyTemplate { get; set; }
+       // public ICollection<EventFieldViewModles> EventFields { get; set; }
 
 
 

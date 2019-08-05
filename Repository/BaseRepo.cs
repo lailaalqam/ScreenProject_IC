@@ -9,10 +9,10 @@ namespace ScreenProject.Repository
 {
     public class BaseRepo<T> : IBaseRepo<T> where T : class, IBaseModle
     {
-        public readonly MyAppContext _mYbaseContext;
+        public readonly MyAppContext _appContext;
         public BaseRepo(MyAppContext context)
         {
-            _mYbaseContext = context;
+            _appContext = context;
 
         }
 

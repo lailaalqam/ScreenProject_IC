@@ -10,10 +10,10 @@ namespace ScreenProject.Repository
     public class TemplateRepo : BaseRepo<Template>, ITemplateRepo
     {
 
-        public MyAppContext _mYHelperContext;
+        public MyAppContext _appContext;
         public TemplateRepo(MyAppContext context) : base(context)
         {
-            _mYHelperContext = context;
+            _appContext = context;
 
         }
 

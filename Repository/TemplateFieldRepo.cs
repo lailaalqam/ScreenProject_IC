@@ -10,10 +10,11 @@ namespace ScreenProject.Repository
     public class TemplateFieldRepo : BaseRepo<TemplateField>, ITemplateFieldRepo
     {
 
-        public MyAppContext _mYHelperContext;
+        public MyAppContext _appContext;
         public TemplateFieldRepo(MyAppContext context) : base(context)
         {
-            _mYHelperContext = context;
+            _appContext = context;
+            _appContext = context;
 
         }
 
