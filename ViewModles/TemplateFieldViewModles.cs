@@ -19,8 +19,8 @@ namespace ScreenProject.ViewModles
 
         public String FontColor { get; set; }
         public String Name { get; set; }
-       // public TemplateViewModles MyTemplate { get; set; }
-       // public ICollection<EventFieldViewModles> EventFields { get; set; }
+        public TemplateViewModles MyTemplate { get; set; }
+       public ICollection<EventFieldViewModles> EventFields { get; set; }
 
 
 

@@ -45,9 +45,11 @@ namespace ScreenProject.Repository
             string daily = dateTime.ToString("");
             string once = dateTime.ToString("dd / MM / yyyy");
 
-            return _appContext.Events.Include(c => c.MyTemplate).Include(c => c.EventFields).Where(c => ((c.Date.ToString("dd/MM") == annual) && (c.Repeat == "annual")) || ((c.Date.ToString("dd") == monthly) && (c.Repeat == "monthly")) || ((c.Repeat == "daily")) || ((c.Date.ToString("dd / MM / yyyy") == once) && (c.Repeat == "once"))).ToList();
+            return _appContext.Events.Include(c => c.MyTemplate).ThenInclude(t => t.TemplateFields)
+               .Include(c => c.EventFields)
+                .Where(c => ((c.Date.ToString("dd/MM") == dateTime.ToString("dd/MM")) && (c.Repeat == "annual")) || ((c.Date.ToString("dd") == monthly) && (c.Repeat == "monthly")) || ((c.Repeat == "daily")) || ((c.Date.ToString("dd / MM / yyyy") == once) && (c.Repeat == "once"))).ToList();
         }
-        public List<Event> GetAllDaily()
+            public List<Event> GetAllDaily()
         {
 
             DateTime dateTime = DateTime.Now;

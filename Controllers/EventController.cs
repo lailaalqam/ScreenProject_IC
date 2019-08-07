@@ -35,17 +35,30 @@ namespace ScreenProject.Controllers
             return _IeventRepo.GetALL();
         }
 
-
-
         [HttpGet]
-        public ActionResult<List<EventListViewModle> >GetAllAnnual()
+        public ActionResult<List<EventViewModles>> Annual()
         {
 
-             List<Event>events= _IeventRepo.GetAnnualMonthlyDailyAndOnce();
+            List<Event> events = _IeventRepo.GetAnnualMonthlyDailyAndOnce();
 
-            List<EventListViewModle> eventViewModles = _iMapper.Map<List<EventListViewModle>>(events);
+            List<EventViewModles> eventViewModles = _iMapper.Map<List<EventViewModles>>(events);
             return eventViewModles;
-           
+
+
+        }
+
+
+
+        [HttpGet("Anal")]
+        public List<Event> GetAllAnnual()
+        {
+
+           List < Event > events = _IeventRepo.GetAnnualMonthlyDailyAndOnce();
+
+            
+            return events;
+
+
         }
 
         // GET api/<controller>/5
