@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 .con {
   background-position: center !important;
-  background-size: cover !important;
   background-repeat: no-repeat !important;
-  width: calc(100vw );
-  height: calc(100vh );
-  background-size: 100% 100%;
+  background-size: cover !important;
+  height: 100vh;
+}
+.value {
+  position: relative;
+}
+body,html{
+  height:100vh;
+
+  
 }

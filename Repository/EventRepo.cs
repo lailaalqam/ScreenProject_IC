@@ -47,7 +47,10 @@ namespace ScreenProject.Repository
 
             return _appContext.Events.Include(c => c.MyTemplate).ThenInclude(t => t.TemplateFields)
                .Include(c => c.EventFields)
-                .Where(c => ((c.Date.ToString("dd/MM") == dateTime.ToString("dd/MM")) && (c.Repeat == "annual")) || ((c.Date.ToString("dd") == monthly) && (c.Repeat == "monthly")) || ((c.Repeat == "daily")) || ((c.Date.ToString("dd / MM / yyyy") == once) && (c.Repeat == "once"))).ToList();
+                .Where(c => ((c.Date.ToString("dd/MM") == dateTime.ToString("dd/MM")) 
+                && (c.Repeat == "annual")) || ((c.Date.ToString("dd") == monthly)
+                && (c.Repeat == "monthly")) || ((c.Repeat == "daily")) || ((c.Date.ToString("dd / MM / yyyy") == once) 
+                && (c.Repeat == "once"))).ToList();
         }
             public List<Event> GetAllDaily()
         {
